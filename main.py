@@ -1,4 +1,3 @@
-# Save this as: main.py
 import pygame
 
 from constants import *
@@ -13,7 +12,6 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     
-    # Create the player at the center of the screen
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     
     while True:
@@ -21,9 +19,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
         
+        player.update(dt)
+        
         screen.fill("black")
         
-        # Draw the player (after filling screen, before flipping)
         player.draw(screen)
         
         pygame.display.flip()
